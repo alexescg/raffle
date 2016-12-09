@@ -24,6 +24,10 @@ erl_crash.dump
 /config/prod.secret.exs
 /config/dev.secret.exs
 
+mix.lock
+
 #IDE
 .idea/
 *.iml
+
+.DS_Store
