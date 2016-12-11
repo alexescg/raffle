@@ -18,6 +18,7 @@ defmodule Raffle.Router do
     pipe_through :browser # Use the default browser stack
     get "/", PageController, :index
     resources "/users", UserController
+    resources "/raffles", RaffleController
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 

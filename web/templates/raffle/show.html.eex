@@ -1,0 +1,28 @@
+<h2>Show raffle</h2>
+
+<ul>
+
+  <li>
+    <strong>User:</strong>
+    <%= @raffle.user_id %>
+  </li>
+
+  <li>
+    <strong>Url:</strong>
+    <%= @raffle.url %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @raffle.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @raffle.description %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: raffle_path(@conn, :edit, @raffle) %>
+<%= link "Back", to: raffle_path(@conn, :index) %>

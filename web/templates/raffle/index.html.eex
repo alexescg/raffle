@@ -1,0 +1,32 @@
+<h2>Listing raffles</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Url</th>
+      <th>Title</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for raffle <- @raffles do %>
+    <tr>
+      <td><%= raffle.user_id %></td>
+      <td><%= raffle.url %></td>
+      <td><%= raffle.title %></td>
+      <td><%= raffle.description %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: raffle_path(@conn, :show, raffle), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: raffle_path(@conn, :edit, raffle), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: raffle_path(@conn, :delete, raffle), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New raffle", to: raffle_path(@conn, :new) %>
